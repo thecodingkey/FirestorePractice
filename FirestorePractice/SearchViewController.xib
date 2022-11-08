@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="FirestorePractice" customModuleProvider="target">
+            <connections>
+                <outlet property="tfSearch" destination="Ffb-hN-Tbt" id="cbL-9S-kng"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9X-Uh-Iqf">
+                    <rect key="frame" x="16" y="63" width="107" height="35"/>
+                    <color key="tintColor" systemColor="systemGray6Color"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="&lt; Regresar"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="Y0r-g8-USX"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffb-hN-Tbt">
+                    <rect key="frame" x="39" y="148" width="232" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="KKg-E6-thP"/>
+                        <constraint firstAttribute="width" constant="232" id="diq-Cg-NGc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-wK-7er">
+                    <rect key="frame" x="279" y="155" width="73" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle" catalog="system"/>
+                    <connections>
+                        <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="Dlj-hF-X1V"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-iC-fzc">
+                    <rect key="frame" x="190.33333333333334" y="260.66666666666669" width="9.3333333333333428" height="23"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                    <color key="textColor" red="0.2080933982" green="0.89000000000000001" blue="0.1851058099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="labelColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ACQ-wK-7er" secondAttribute="trailing" constant="38" id="3ao-po-2lE"/>
+                <constraint firstItem="ACQ-wK-7er" firstAttribute="leading" secondItem="Ffb-hN-Tbt" secondAttribute="trailing" constant="8" symbolic="YES" id="8qV-eL-VAI"/>
+                <constraint firstItem="ACQ-wK-7er" firstAttribute="centerY" secondItem="Ffb-hN-Tbt" secondAttribute="centerY" id="Cgf-Sy-qf7"/>
+                <constraint firstItem="X6v-iC-fzc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HF1-Qx-EfX"/>
+                <constraint firstItem="a9X-Uh-Iqf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MDH-Q1-zRy"/>
+                <constraint firstItem="a9X-Uh-Iqf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Nge-hf-s9c"/>
+                <constraint firstItem="Ffb-hN-Tbt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-250" id="PXQ-J0-PYG"/>
+                <constraint firstItem="ACQ-wK-7er" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="108" id="oQq-Wq-t0W"/>
+                <constraint firstItem="X6v-iC-fzc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-150" id="rgj-0O-7mX"/>
+                <constraint firstItem="Ffb-hN-Tbt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-40" id="rp6-8N-Ldi"/>
+            </constraints>
+            <point key="canvasLocation" x="130.76923076923077" y="-11.374407582938389"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
