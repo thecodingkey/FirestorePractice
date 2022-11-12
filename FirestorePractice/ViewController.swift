@@ -30,8 +30,6 @@ class ViewController: UIViewController {
               let nickName = tfNickName.text,
               let score = tfScore.text else { return  dataInput }
         
-        
-        
         dataInput = ["Name":name,
                      "NickName":nickName,
                      "Score":score]
@@ -40,21 +38,45 @@ class ViewController: UIViewController {
     }
     
     func saveDataOnFirestore(params:[String:String]) {
-        var ref: DocumentReference? = nil
-        ref = db.collection("Characters").addDocument(data: params) { [weak self] err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added \(ref?.documentID ?? "")")
-                self?.clearUI()
+        var status = false
+        params.map { [weak self] _, value in
+            if !value.isEmpty{
+               status = true
+            }else{
+                status = false
+                showErrors(tf: (self?.tfName)!)
+                showErrors(tf: (self?.tfNickName)!)
+                showErrors(tf: (self?.tfScore)!)
+            }
+            
+        }
+        
+        if status {
+            var ref: DocumentReference? = nil
+            ref = db.collection("Characters").addDocument(data: params) { [weak self] err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added \(ref?.documentID ?? "")")
+                    self?.clearUI()
+                }
             }
         }
+        
+        
     }
     
     func clearUI()  {
         tfName.text = ""
         tfNickName.text = ""
         tfScore.text = ""
+    }
+    
+    
+    func showErrors(tf:UITextField){
+        tf.layer.borderWidth = 2
+        tf.layer.borderColor = UIColor.red.cgColor
+        tf.placeholder = "Ingrese un valor"
     }
     
     

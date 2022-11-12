@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="FirestorePractice" customModuleProvider="target">
             <connections>
+                <outlet property="lblResults" destination="KYH-BP-ZNM" id="jI9-44-s5o"/>
                 <outlet property="tfSearch" destination="Ffb-hN-Tbt" id="cbL-9S-kng"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,10 +39,11 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-wK-7er">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-wK-7er">
                     <rect key="frame" x="279" y="155" width="73" height="34"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle" catalog="system"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="87"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="magnifyingglass.circle" catalog="system"/>
                     <connections>
                         <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="Dlj-hF-X1V"/>
                     </connections>
@@ -51,31 +54,57 @@
                     <color key="textColor" red="0.2080933982" green="0.89000000000000001" blue="0.1851058099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYH-BP-ZNM">
+                    <rect key="frame" x="79" y="412" width="232" height="20.333333333333314"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="232" id="d7Y-Kv-hgh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUF-VQ-2KH">
+                    <rect key="frame" x="355" y="155" width="19" height="22"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="trash" catalog="system"/>
+                    <connections>
+                        <action selector="eraseDocument:" destination="-1" eventType="touchUpInside" id="mkY-PL-6WP"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="labelColor"/>
+            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ACQ-wK-7er" secondAttribute="trailing" constant="38" id="3ao-po-2lE"/>
                 <constraint firstItem="ACQ-wK-7er" firstAttribute="leading" secondItem="Ffb-hN-Tbt" secondAttribute="trailing" constant="8" symbolic="YES" id="8qV-eL-VAI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OUF-VQ-2KH" secondAttribute="trailing" constant="16" id="B06-cE-rJY"/>
                 <constraint firstItem="ACQ-wK-7er" firstAttribute="centerY" secondItem="Ffb-hN-Tbt" secondAttribute="centerY" id="Cgf-Sy-qf7"/>
                 <constraint firstItem="X6v-iC-fzc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HF1-Qx-EfX"/>
                 <constraint firstItem="a9X-Uh-Iqf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MDH-Q1-zRy"/>
                 <constraint firstItem="a9X-Uh-Iqf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Nge-hf-s9c"/>
+                <constraint firstItem="KYH-BP-ZNM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OVc-yN-Bwl"/>
                 <constraint firstItem="Ffb-hN-Tbt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-250" id="PXQ-J0-PYG"/>
                 <constraint firstItem="ACQ-wK-7er" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="108" id="oQq-Wq-t0W"/>
                 <constraint firstItem="X6v-iC-fzc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-150" id="rgj-0O-7mX"/>
                 <constraint firstItem="Ffb-hN-Tbt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-40" id="rp6-8N-Ldi"/>
+                <constraint firstItem="KYH-BP-ZNM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tRk-R1-0kA"/>
+                <constraint firstItem="OUF-VQ-2KH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="108" id="yBG-xK-9Lv"/>
             </constraints>
             <point key="canvasLocation" x="130.76923076923077" y="-11.374407582938389"/>
         </view>
     </objects>
     <resources>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
