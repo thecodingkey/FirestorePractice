@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 0.13, green: 0.20, blue: 0.33, alpha: 1.00)
     }
     
     func getTexts() -> [String:String] {
